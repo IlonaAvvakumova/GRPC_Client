@@ -1,0 +1,14 @@
+syntax = "proto3";
+package com.example.grpc;
+message HelloRequest{
+  string name = 1; // цифры = ключи для пересылки
+  repeated string hobies = 2; //list
+}
+message HelloResponse{
+  string greeting = 1;
+
+}
+//содержить rpc-методы
+service GreetingService{
+rpc greeting (HelloRequest) returns (HelloResponse);
+}
